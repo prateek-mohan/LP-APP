@@ -11,6 +11,15 @@ from azure.storage.blob import BlobServiceClient
 
 app = FastAPI()
 templates=Jinja2Templates(directory="templates")
+origins = ["*"] # Replace * with the allowed origins
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 my_connection_string='DefaultEndpointsProtocol=https;AccountName=aiworkspace4684782811;AccountKey=+IRiIf1QCRTNc9qDhJRQdoqmTH43tdMOXwSQxFXGKrzspKIa65JJwSo63wHa/mbfxF6t5+vbdZno+AStN6rTfw==;EndpointSuffix=core.windows.net'
 
 
