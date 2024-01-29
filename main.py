@@ -45,7 +45,7 @@ async def upload_image(file: UploadFile = File(...)):
     image.save(temp_file_path)
     
     # Call the predict function using subprocess.Popen
-    results=subprocess.Popen(["python", "predictWithOCR.py", "model='Licence_Plate_Repo/best.pt'", f"source={temp_file_path}"], stdout=subprocess.PIPE)
+    results=subprocess.Popen(["python", "predictWithOCR.py", "model='best.pt'", f"source={temp_file_path}"], stdout=subprocess.PIPE)
     output, error = results.communicate()
     
     # Delete the temporary file
