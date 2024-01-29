@@ -11,7 +11,7 @@ from azure.storage.blob import BlobServiceClient
 
 app = FastAPI()
 templates=Jinja2Templates(directory="templates")
-origins = ["redactapp.azurewebsites.net"] # Replace * with the allowed origins
+origins = ["*","redactapp.azurewebsites.net"] # Replace * with the allowed origins
 
 app.add_middleware(
     CORSMiddleware,
