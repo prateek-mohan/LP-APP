@@ -9,6 +9,8 @@ subprocess32
 jinja2
 uvicorn
 gunicorn
+git+https://github.com/benoitc/gunicorn.git
+gunicorn==21.2.0
 ultralytics==8.0.3
 hydra-core>=1.2.0
 matplotlib>=3.2.2
